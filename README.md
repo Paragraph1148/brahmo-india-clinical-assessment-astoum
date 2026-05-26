@@ -1,6 +1,6 @@
 # BRAHMO Clinical AI — India
 
-> Indian-context clinical decision support for **Type 2 Diabetes** and **Cardiovascular Disease**. Built for Apollo Chennai. Cites RSSDI + CSI (not ADA/ACC-AHA), uses Indian drug brands with ₹ MRP, includes NLEM pricing and Jan Aushadhi awareness, and surfaces hospital-specific referrals.
+> Indian-context clinical decision support for **Type 2 Diabetes** and **Cardiovascular Disease**. Built for India. Cites RSSDI + CSI (not ADA/ACC-AHA), uses Indian drug brands with ₹ MRP, includes NLEM pricing and Jan Aushadhi awareness, and surfaces hospital-specific referrals.
 
 **Patent**: BRAHMO platform, USPTO #74841377 (multi-tenant condition-tag clinical decision architecture).
 
