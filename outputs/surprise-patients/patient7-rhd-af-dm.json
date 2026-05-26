@@ -1,0 +1,41 @@
+{
+  "patient": {
+    "id": 7,
+    "patient_label": "RHD + AF + New T2DM",
+    "age": 45,
+    "sex": "F",
+    "bmi": 24.8,
+    "conditions": [
+      "Rheumatic Heart Disease",
+      "Mitral Stenosis (moderate)",
+      "Atrial Fibrillation (new)",
+      "T2DM (newly diagnosed)"
+    ],
+    "medications": [
+      {"drug": "Furosemide", "dose": "20mg OD"},
+      {"drug": "Penicillin V", "dose": "250mg BD (RHD prophylaxis)"}
+    ],
+    "allergies": ["NKDA"],
+    "labs": {
+      "HbA1c": 7.8,
+      "FBS": 156,
+      "Cr": 0.9,
+      "K": 4.2,
+      "Na": 138,
+      "INR": 1.1,
+      "Hb": 11.2
+    },
+    "vitals": {
+      "HR": 118,
+      "BP": "118/76",
+      "SpO2": 96,
+      "RR": 18
+    },
+    "insurance": {
+      "provider": "CGHS",
+      "notes": "Government scheme, generic preferred"
+    },
+    "income_context": "Lower middle class, school teacher, ₹25K/month"
+  },
+  "question": "Newly detected AF in a patient with rheumatic mitral stenosis. CHA2DS2-VASc is 3 (HTN absent, female, T2DM, age 45). Plus she just tested T2DM. What's my anticoagulation choice and how do I start diabetes management given she's on lifelong penicillin prophylaxis?"
+}

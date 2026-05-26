@@ -1,0 +1,37 @@
+{
+  "patient": {
+    "id": 9,
+    "patient_label": "Cold Case — Chest Pain + Hyperglycemia",
+    "age": 60,
+    "sex": "M",
+    "bmi": 29.1,
+    "conditions": [
+      "Chest pain (acute, 4 hours)",
+      "Hyperglycemia (newly detected)",
+      "Hypertension (newly diagnosed)"
+    ],
+    "medications": [],
+    "allergies": ["Aspirin (mild rash, no anaphylaxis)"],
+    "labs": {
+      "Glucose": 340,
+      "HbA1c": 9.8,
+      "Cr": 1.1,
+      "K": 3.9,
+      "Na": 134,
+      "Troponin": 0.18,
+      "ECG": "Inferior ST elevation 2mm in II, III, aVF; reciprocal in I, aVL"
+    },
+    "vitals": {
+      "HR": 96,
+      "BP": "168/98",
+      "SpO2": 95,
+      "RR": 22
+    },
+    "insurance": {
+      "provider": "",
+      "notes": ""
+    },
+    "income_context": "Daily wage construction worker, ₹600/day, no insurance, lives in slum"
+  },
+  "question": "60M just walked into ED. Chest pain 4 hours, inferior ST elevation on ECG, troponin 0.18 ng/mL. Random glucose 340, HbA1c 9.8. BP 168/98. Aspirin allergy (rash only, no anaphylaxis). What's the immediate STEMI protocol AND what do I do about his blood sugar right now? He's uninsured, ₹600/day wage."
+}

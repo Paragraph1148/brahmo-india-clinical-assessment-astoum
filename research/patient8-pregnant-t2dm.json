@@ -1,0 +1,39 @@
+{
+  "patient": {
+    "id": 8,
+    "patient_label": "Pregnant + Pre-existing T2DM",
+    "age": 28,
+    "sex": "F",
+    "bmi": 27.5,
+    "conditions": [
+      "T2DM (3yr, pre-existing)",
+      "Pregnancy (12 weeks, first trimester)"
+    ],
+    "medications": [
+      {"drug": "Metformin", "dose": "500mg BD"},
+      {"drug": "Glimepiride", "dose": "2mg OD"}
+    ],
+    "allergies": ["NKDA"],
+    "labs": {
+      "HbA1c": 7.4,
+      "FBS": 132,
+      "Cr": 0.6,
+      "eGFR": 110,
+      "K": 4.0,
+      "Na": 139,
+      "TSH": 2.1,
+      "UrineACR": 18
+    },
+    "vitals": {
+      "HR": 84,
+      "BP": "122/78",
+      "SpO2": 99
+    },
+    "insurance": {
+      "provider": "Star Health",
+      "notes": "Maternity coverage active"
+    },
+    "income_context": "Middle class, IT employee on maternity benefits"
+  },
+  "question": "28F, 12 weeks pregnant, has T2DM 3 years on Metformin + Glimepiride. HbA1c 7.4%. How do I manage her diabetes safely in pregnancy? What stops, what continues, and what's the target?"
+}
