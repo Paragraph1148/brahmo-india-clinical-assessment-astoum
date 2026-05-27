@@ -13,6 +13,7 @@ This system meets that rule via **tag-based polymorphism**:
 - The safety engine and prompt composer **never hard-code conditions**. They query by tag.
 
 When adding respiratory medicine:
+
 - Insert drug rows tagged `["respiratory", "asthma"]`
 - Insert guideline rows tagged `["respiratory"]` from Indian Chest Society
 - `drugs_for_condition('respiratory')` works immediately
@@ -44,7 +45,7 @@ When adding respiratory medicine:
               ▼
    ┌─────────────────────┐
    │ Prompt Composer     │   pulls:
-   │ (Phase 4 - TODO)    │   - guidelines by condition_tag
+   │                     │   - guidelines by condition_tag
    │                     │   - drugs by condition_tag + formulary stock
    │                     │   - safety flags (already computed)
    │                     │   - patient cost context (insurance, NLEM, income)
@@ -69,20 +70,24 @@ When adding respiratory medicine:
 ## Table schema rationale
 
 ### `drugs` table — unified
+
 - `drug_class` is a string, not an enum. New classes (e.g. "Bronchodilator") don't require ALTER TABLE.
 - `renal_dosing` is JSONB with eGFR-bucket keys (`egfr_45_plus`, `egfr_below_30`, etc.). The calculator returns matching bucket keys for any eGFR.
 - `condition_tags` is JSONB array. A single drug (e.g. Empagliflozin) can be tagged for diabetes, cardiovascular, AND heart_failure — and appear in queries for any of them.
 - `hf_safe`, `hypoglycemia_risk`, `weight_effect` are top-level columns (not JSONB) because they're used in every safety check — JSONB would slow down indexing.
 
 ### `drug_interactions` table — unified
+
 - One severity scale (`minor` / `moderate` / `severe` / `contraindicated`) covers all conditions.
 - `drug_a_name` / `drug_b_name` columns allow interactions with substances not in the drugs table (e.g. "Alcohol", "NSAIDs", "IV contrast dye") — important for real-world coverage.
 
 ### `indian_guidelines` table — unified
+
 - `source_id` is a string ("RSSDI", "CSI", "IHRS/CSI", "MoHFW_STG", "RSSDI+CSI"). New societies (Indian Chest Society for respiratory) add naturally.
 - `condition_tags` enables overlap queries: `WHERE condition_tags ?& ARRAY['diabetes', 'heart_failure']` returns RSSDI+CSI overlap recommendations directly.
 
 ### `hospital_formulary` table
+
 - Decoupled from drugs by `drug_id` FK. Different hospitals can have different formulary tables pointing at the same drug master. Apollo Chennai stock is the default; Apollo Hyderabad would just be different rows.
 
 ## The safety engine as composable checks
